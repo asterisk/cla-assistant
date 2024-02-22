@@ -4,7 +4,7 @@
 
 // module
 const github = require('./github')
-const repoService = require('./repo')
+// const repoService = require('./repo')
 const url = require('./url')
 const logger = require('./logger')
 
@@ -159,7 +159,7 @@ class WebhookService {
     }
 
     async _handleHookForLinkedRepoInOrg(org, token, delegateFun) {
-        const repos = await repoService.getByOwner(org)
+        const repos = []; //await repoService.getByOwner(org)
         if (!repos || repos.length === 0) {
             throw 'No repos found for the org'
         }
